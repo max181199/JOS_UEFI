@@ -31,7 +31,7 @@ const char * alocate_types[] =
     "MaxAllocateType",
 };
 
-#define LP_pointer 0x1EB9EC90 // Realizaation For -m 512 
+#define LP_pointer 0x1E7DB098// Realizaation For -m 512 
 // if -m 512 : 0x1EB9EC90
 // if -m 128 : 0x06B9EC90
 // if -m 1024: 0x3EB9EC90

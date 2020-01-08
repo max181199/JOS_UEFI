@@ -48,9 +48,8 @@ EFI_STATUS GoTime(EFI_HANDLE ImageHandle, GPU_CONFIG * Graphics, EFI_CONFIGURATI
   }
 #endif
 
-#ifdef LOADER_DEBUG_ENABLED
   Print(L"GO GO GO!!!\r\n");
-#endif
+
 
   EFI_STATUS GoTimeStatus;
 
@@ -1307,6 +1306,9 @@ Txt_FileInfo->FileSize = Txt_File_Size;
     typedef void (__attribute__((ms_abi)) *EntryPointFunction)(LOADER_PARAMS * LP); // Placeholder names for jump
     EntryPointFunction EntryPointPlaceholder = (EntryPointFunction)(uintptr_t)(Header_memory);
     EntryPointPlaceholder(Loader_block);
+    //  How i can undestand thre we jump into boot and begin jos loading
+    //  Now i want create asm file Loader_asm.s
+    //  And create new jump in this but how
   }
   else
   {

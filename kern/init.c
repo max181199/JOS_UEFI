@@ -38,29 +38,9 @@ i386_init(void)
 	// Initialize the console.
 	// Can't call cprintf until after we do this!
 	cons_init();
-	init_memory_map(); // initial new memory map
+	//init_memory_map(); // initial new memory map
 			
-			//Test Allocate One
-			EFI_PHYSICAL_ADDRESS memetest ;
-			AllocatePages( AllocateAnyPages, EfiReservedMemoryType , 7, &memetest );
-			AllocatePages( AllocateAnyPages, EfiReservedMemoryType , 7, &memetest );
-			AllocatePages( AllocateAnyPages, EfiReservedMemoryType , 146, &memetest );
-			memetest=0x3000;
-			FreePages(  &memetest , 3 ); 
-			//Test Allocate One Done
-
-			//Test Allocate Two
-			// EFI_PHYSICAL_ADDRESS memetest = 0xA000;
-			// AllocatePages( AllocateMaxAddress, EfiReservedMemoryType , 19, &memetest );
-			// AllocatePages( AllocateMaxAddress, EfiReservedMemoryType , 2, &memetest );
-			//Test Allocate Two Done
-	
-			//Test Allocate Three 
-			// EFI_PHYSICAL_ADDRESS memetest = 0xA000;
-			// AllocatePages( AllocateAddress, EfiReservedMemoryType , 10 , &memetest );
-			//
-			//Test Allocate Three Done
-
+			
 
 	cprintf("6828 decimal is %o octal!\n", 6828);
   	cprintf("alignof uint64_t is %d\n", __alignof(uint64_t));

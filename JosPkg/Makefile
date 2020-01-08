@@ -1,9 +1,9 @@
 #Path to OVMF.fd file
-OVMF_PATH=/home/max/edk2/Build/OvmfIa32/DEBUG_GCC5/FV
+OVMF_PATH=/home/max/edk2/Build/OvmfX64/DEBUG_GCC5/FV
 #Path to Your JOS repo
-OS_LAB_PATH=/home/max/Dropbox/m.fedyashkin-osprac
+OS_LAB_PATH=/home/max/m.fedyashkin-osprac
 #Path to Loader.efi file builded from JOS package 
-JOS_PKG=/home/max/edk2/Build/Jos/DEBUG_GCC5/IA32
+JOS_PKG=/home/max/edk2/Build/Jos/DEBUG_GCC5/X64
 #Path to JOS qemu installation directory
 QEMU_INST=/usr
 
@@ -21,7 +21,7 @@ complex:
 
 #https://wiki.osdev.org/UEFI
 simple:
-	$(QEMU_INST)/bin/qemu-system-i386 -m 512 -s -bios $(OVMF_PATH)/OVMF.fd -drive file=uefi.img,if=ide -net none -serial mon:stdio -debugcon file:debug.log -global isa-debugcon.iobase=0x402
+	$(QEMU_INST)/bin/qemu-system-x86_64  -s -m 512 -bios $(OVMF_PATH)/OVMF.fd -drive file=uefi.img,if=ide -net none -serial mon:stdio -debugcon file:debug.log -global isa-debugcon.iobase=0x402 
 
 #Build JOS kernel, generate uefi image
 #Current file size = 48mb, increase if JOS kernel overlaps
